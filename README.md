@@ -2,7 +2,7 @@
 
 Follow these guidelines for getting eTrustable Public Verifier locally on your system. You can fork this project and use it for any purpose.
 
-This project also runs here: http://verifier.etrustable.com
+This project also runs here: [https://verifier.etrustable.com](https://verifier.etrustable.com)
 
 For information about eTrustable have a look at our Homepage: [https://etrustable.com](https://etrustable.com)
 
