@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', [multer.single('file')], (req, res) => {
-  const contractInterface = JSON.parse(fs.readFileSync('./etrustable-contracts/build/contracts/Documents.json', 'utf8'));
+  const contractInterface = JSON.parse(fs.readFileSync('./contracts/build/contracts/Documents.json', 'utf8'));
   const contractAbi = contractInterface['abi'];
 
   web3 = new Web3(new Web3.providers.HttpProvider(process.env.WEB3_HTTP_PROVIDER));
