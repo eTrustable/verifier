@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/fontawesome/all.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/gh-fork-ribbon.css' />
+    <script src="/javascripts/upload.js"></script>
+  </head>
+  <body>
+    <a class="github-fork-ribbon" href="https://github.com/eTrustable/verifier" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <!-- Image and text -->
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.svg" height="25" class="d-inline-block align-top" />
+        <span class="ml-3 font-weight-lighter">Public Verifier</span>
+      </a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 pt-4 pt-5">
+        {% block body %}{% endblock %}
+        </div>
+      </div>
+    </div>
+    <footer class="p-4 mt-5 text-center text-muted">
+      <p>
+        You can find the code of this app here <a href="#">https://github.com/etrustable/verifier</a> and run this verifier by yourself.
+      </p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="https://docs.etrustable.com">Documentation</a></li>
+        <li class="list-inline-item"><a href="https://etrustable.com">About Us</a></li>
+        <li class="list-inline-item"><a href="mailto:support@etrustable.com">Contact</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

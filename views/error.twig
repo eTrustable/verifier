@@ -1,0 +1,9 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <div class="error">
+    <h1 class="mb-4">{{message}}</h1>
+    <h2>{{error.status}}</h2>
+    <pre class="text-muted">{{error.stack}}</pre>
+  </div>
+{% endblock %}

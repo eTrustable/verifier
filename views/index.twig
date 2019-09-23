@@ -1,0 +1,52 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h2 class="text-center text-primary">Verify any file stored in Blockchain through eTrustable</h2>
+  <p class="lead mb-3 text-center text-muted mt-4 mb-5">
+    eTrustable provides integrity and security solutions in document management for critical environments such as the banking or legal industry. <a href="https://docs.etrustable.com">Find out more</a>
+  </p>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      {% if fileDigest and valid %}
+        <div class="card border-success" onclick="select()">
+          <div class="card-body pb-5 pt-5">
+            <div class="text-center">
+              <i class="fa fa-check-circle text-success display-2 mt-2"></i>
+              <div class="mt-4 lead">
+               This document is valid
+              </div>
+              <p class="text-black-50 mt-2">This means that the file digest match with the information stored in Blockchain. <a href="/">Verify other document</a></p>
+            </div>
+          </div>
+        </div>
+      {% elseif fileDigest and not valid %}
+        <div class="card border-danger" onclick="select()">
+          <div class="card-body pb-5 pt-5">
+            <div class="text-center">
+              <i class="fa fa-times-circle text-danger display-2 mt-2"></i>
+              <div class="mt-4 lead">
+               This document is not valid
+              </div>
+              <p class="text-black-50 mt-2">This means that the file digest does not match with the information stored in Blockchain. <a href="/">Verify other document</a></p>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="card upload" onclick="select()">
+          <div class="card-body pb-5 pt-5">
+            <div class="text-center">
+              <i class="fa fa-file-upload text-primary display-2 mt-2"></i>
+              <div class="mt-4 lead">
+               Upload a document from your computer
+              </div>
+              <p class="text-black-50 mt-2">The uploaded file must be a .pdf smaller than 50Mb</p>
+            </div>
+            <form method="POST" action="/" enctype="multipart/form-data">
+              <input type="file" class="form-control-file" id="file" name="file" placeholder="File" hidden onchange="this.form.submit();">
+            </form>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
